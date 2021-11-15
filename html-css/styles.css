@@ -1,0 +1,242 @@
+/*-----------------------------import-----------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*-----------------------------INDEX-----------------------------------*/
+
+/*-----------------------------header-----------------------------------*/
+
+header {
+    width: 100%;
+    background: #000000;
+    height: 120px;
+    font-family: 'Mukta', sans-serif;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.container_header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.container_header .searchbar input {
+    border: 2px solid #85F2DE;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.container_header .searchbar input::placeholder, input[type=text] {
+    color: #85F2DE;
+}
+
+.fa-search {
+    color: #85F2DE;
+    position: absolute;
+    top: 50px;
+    right: 70px;
+}
+
+.logo img {
+    height: 41px;
+    width: 139px;
+}
+
+nav {
+    position: relative;
+    margin-top: -15px;
+}
+
+nav ul li {
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    height: 60px;
+    float: left;
+    text-align: center;
+    line-height: 70px;
+}
+
+nav ul li a {
+    color: white;
+}
+
+nav ul li a:hover {
+    opacity: 50%;
+    transition: 0.5s ease;
+}
+
+nav ul li p {
+    color: white;
+    border-right: 1px solid white;
+    height: 20px;
+    display: inline;
+    padding-right: 60px;
+    margin-left: 60px;
+}
+
+nav ul li ul li {
+    background-color: black;
+    display: none;
+}
+
+nav ul li:hover ul li{
+    background-color: black;
+    display: block;
+    transition: all 1s ease-out;
+}
+
+/*-----------------------------main-----------------------------------*/
+
+.home_image {
+    text-align: center;
+    margin-top: 200px;
+}
+.home_image img {
+    max-width: 80%;
+}
+
+main h2 {
+    font-family: 'Days One', sans-serif;
+    margin-left: 10%;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+
+.parallax {
+    background-image: url("images/image_accueil_parallax.png");
+    height: 450px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+}
+
+.parallax .text_parallax h3 {
+    color: white;
+    font-family: 'Days One', sans-serif;
+    text-align: left;
+}
+
+.parallax .text_parallax p {
+    color: white;
+    font-family: 'Mukta', sans-serif;
+    max-width: 75%;
+    margin-top: 20px;
+}
+
+.parallax .text_parallax {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------slider-----------------------------------*/
+
+
+.container .mini-container .descri h3,p {
+    max-width: 225px;
+    font-family: 'Mukta', sans-serif;
+}
+.container .mini-container .img img {
+    max-width: 80%;
+}
+
+.container .mini-container:hover {
+    transform: scale(0.95);
+    transition: 0.5s ease;
+}
+
+.slider {
+    max-width: 80%;
+    margin-left: 10%;
+    margin-bottom: 50px;
+    position: relative;
+
+}
+
+.slider .theme img {
+    max-width: 80%;
+}
+
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    position: absolute;
+    bottom: 150px;
+    color: #000000;
+    border: 0;
+    background: none;
+
+}
+
+.slick-prev {
+    left: -80px;
+}
+
+.slick-prev:after {
+    content: "\f104";
+    font: 40px/1 'FontAwesome';
+}
+
+.slick-next {
+    right: -80px;
+    text-align: right;
+}
+
+.slick-next:after {
+    content: "\f105";
+    font: 40px/1 'FontAwesome';
+}
+
+.slick-prev:hover:after,
+.slick-next:hover:after {
+    color: #7e7e7e;
+    transition: 0.25s ease;
+}
+
+
+
+
+/*-----------------------------footer-----------------------------------*/
+
+footer {
+    background: linear-gradient(#1C2745, #0D0D0D);
+    height: 420px;
+    color: white;
+    font-family: 'Mukta', sans-serif;
+}
+
+.footer_colonne {
+    display: flex;
+}
+
+
