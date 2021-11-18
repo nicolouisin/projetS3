@@ -1,45 +1,64 @@
 <template>
-  <div class="carousel">
-    <div class="inner">
-      <img :src="require('../assets/images/miniature_emission_1.png')"
-           class="image" v-for="image in images" :key="image">
-    </div>
+  <div>
+    <VueSlickCarousel v-bind="settings">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+
+    </VueSlickCarousel>
   </div>
 </template>
 
 <script>
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
 export default {
   name: "Carousel",
-  data () {
+  components: { VueSlickCarousel },
+  data() {
     return {
-      images: [1, 2, 3, 4, 5, 6, 7, 8]
+      settings: {
+        "arrows": true,
+      "dots": true,
+      "infinite": false,
+      "speed": 500,
+      "slidesToShow": 3,
+      "slidesToScroll": 3,
+      "initialSlide": 0,
+      "responsive": [
+        {
+          "breakpoint": 1024,
+          "settings": {
+            "slidesToShow": 3,
+            "slidesToScroll": 3,
+            "infinite": true,
+            "dots": true
+          }
+        },
+        {
+          "breakpoint": 600,
+          "settings": {
+            "slidesToShow": 2,
+            "slidesToScroll": 2,
+            "initialSlide": 2
+          }
+        },
+        {
+          "breakpoint": 480,
+          "settings": {
+            "slidesToShow": 1,
+            "slidesToScroll": 1
+          }
+        }
+      ]
     }
+  }
   }
 }
 </script>
 
 <style scoped>
-.carousel {
-  width: 80%;
-  overflow: hidden;
-}
-.inner {
-  white-space: nowrap;
-}
-.image {
-  max-width: 100%;
-  margin-right: 10px;
-  display: inline-flex;
-  /* optional */
-  background-color: #39b1bd;
-  color: white;
-  border-radius: 4px;
-  align-items: center;
-  justify-content: center;
-}
-/* optional */
-button {
-  margin-right: 5px;
-  margin-top: 10px;
-}
+
 </style>

@@ -7,7 +7,7 @@
         </div>
         <nav class="nav">
           <ul>
-            <li><p>Thématiques</p>
+            <li><strong>Thématiques</strong>
               <ul>
                 <li><a href="">Making of</a></li>
                 <li><a href="">Évènements</a></li>
@@ -18,7 +18,7 @@
                 <li><a href="">Bibliothèque Universitaire</a></li>
               </ul>
             </li>
-            <li><p>Catégories</p></li>
+            <li><strong><a href="">Catégories</a></strong></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>

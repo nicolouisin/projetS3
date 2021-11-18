@@ -12,18 +12,6 @@
         </g>
       </svg>
     </h2>
-    <div class="container slider">
-      <div class="mini-container">
-        <div class="img">
-          <img src="images/miniatures/miniature_emission_1.png" alt="">
-        </div>
-        <div class="descri">
-          <h3>Fête de la science 2020 - Le Live!</h3>
-          <p>C'est dans le bar où elle chante
-            que Maggie Conlan fait la ...</p>
-        </div>
-      </div>
-    </div>
 
     <Carousel></Carousel>
 
@@ -36,18 +24,8 @@
         </g>
       </svg>
     </h2>
-    <div class="container slider">
-      <div class="mini-container">
-        <div class="img">
-          <img src="images/miniatures/miniature_emission_1.png" alt="">
-        </div>
-        <div class="descri">
-          <h3>Fête de la science 2020 - Le Live!</h3>
-          <p>C'est dans le bar où elle chante
-            que Maggie Conlan fait la ...</p>
-        </div>
-      </div>
-    </div>
+
+    <Carousel></Carousel>
 
     <h2>Reportage
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
@@ -57,18 +35,8 @@
         </g>
       </svg>
     </h2>
-    <div class="container slider">
-      <div class="mini-container">
-        <div class="img">
-          <img src="images/miniatures/miniature_reportage_1.png" alt="">
-        </div>
-        <div class="descri">
-          <h3>Fête de la science 2020 - Le Live!</h3>
-          <p>C'est dans le bar où elle chante
-            que Maggie Conlan fait la ...</p>
-        </div>
-      </div>
-    </div>
+
+    <Carousel></Carousel>
 
     <h2>JPO
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
@@ -78,18 +46,6 @@
         </g>
       </svg>
     </h2>
-    <div class="container slider">
-      <div class="mini-container">
-        <div class="img">
-          <img src="images/miniatures/miniature_jpo_1.png" alt="">
-        </div>
-        <div class="descri">
-          <h3>Fête de la science 2020 - Le Live!</h3>
-          <p>C'est dans le bar où elle chante
-            que Maggie Conlan fait la ...</p>
-        </div>
-      </div>
-    </div>
 
     <div :style="{ backgroundImage: 'url(' + require('@/assets/images/image_accueil_parallax.png') + ')' }" class="parallax">
       <div class="text_parallax">
