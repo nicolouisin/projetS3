@@ -3,7 +3,9 @@
     <header>
       <div class="container_header">
         <div class="logo">
-          <img :src="require('./assets/images/logo_webtv_white.png')"/>
+          <router-link to="/">
+            <img :src="require('./assets/images/logo_webtv_white.png')"/>
+          </router-link>
         </div>
         <nav class="nav">
           <ul>
@@ -19,7 +21,7 @@
               </ul>
             </li>
             <li><strong><a href="">Catégories</a></strong></li>
-            <li><a href="#">Contact</a></li>
+            <li><router-link to="/Contact">Contact</router-link></li>
           </ul>
         </nav>
         <div class="searchbar">

@@ -34,7 +34,7 @@ export default {
             "slidesToShow": 3,
             "slidesToScroll": 3,
             "infinite": true,
-            "dots": true
+            "dots": true,
           }
         },
         {
@@ -42,14 +42,18 @@ export default {
           "settings": {
             "slidesToShow": 2,
             "slidesToScroll": 2,
-            "initialSlide": 2
+            "initialSlide": 2,
+            "dots": false,
+            "arrows": false
           }
         },
         {
           "breakpoint": 480,
           "settings": {
             "slidesToShow": 1,
-            "slidesToScroll": 1
+            "slidesToScroll": 1,
+            "dots": false,
+            "arrows": false
           }
         }
       ]

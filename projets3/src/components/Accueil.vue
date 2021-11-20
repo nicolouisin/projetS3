@@ -81,10 +81,11 @@
 
 <script>
 import Carousel from "./Carousel";
+import Contact from "./Contact";
 
 export default {
   name: "accueil",
-  components: { Carousel },
+  components: { Carousel, Contact },
 
 }
 </script>
