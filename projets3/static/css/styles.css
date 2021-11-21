@@ -129,6 +129,24 @@ main h2 {
     margin-top: 100px;
 }
 
+@media screen and (max-width: 860px) {
+  .parallax {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .parallax {
+    height: 700px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .parallax {
+    height: 800px;
+  }
+}
+
 .parallax .text_parallax h3 {
     color: white;
     font-family: 'Days One', sans-serif;
@@ -173,13 +191,26 @@ main h2 {
 
 footer {
     background: linear-gradient(#1C2745, #0D0D0D);
-    height: 420px;
     color: white;
     font-family: 'Mukta', sans-serif;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 100px;
 }
 
-footer {
-    text-align: center;
+footer a {
+  color: #FFFFFF;
+}
+
+footer a:hover {
+  opacity: 25%;
+  transition: all 0.5s ease;
+}
+
+footer li a img {
+  width: 20px;
+  margin-right: 20px;
+  padding-top: 5px;
 }
 
 footer h3 {
@@ -188,19 +219,27 @@ footer h3 {
 
 .footer_column {
     display: flex;
-    justify-content: center;
     margin-top: 80px;
+    margin-bottom: 100px;
+    justify-content: space-around;
 }
 
 .footer_column div {
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 10px;
     text-align: left;
 }
 
 .footer_column div h4 {
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .footer_column {
+    flex-direction: column;
+    margin-left: 120px;
+  }
+  .footer_column h4:nth-child(n-2){
+    margin-top: 50px;
+  }
 }
 
 

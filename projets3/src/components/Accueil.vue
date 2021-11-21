@@ -82,10 +82,11 @@
 <script>
 import Carousel from "./Carousel";
 import Contact from "./Contact";
+import Categories from "./Categories";
 
 export default {
   name: "accueil",
-  components: { Carousel, Contact },
+  components: { Carousel, Contact, Categories },
 
 }
 </script>

@@ -20,7 +20,7 @@
                 <li><a href="">Bibliothèque Universitaire</a></li>
               </ul>
             </li>
-            <li><strong><a href="">Catégories</a></strong></li>
+            <li><strong><router-link to="/Categories">Catégories</router-link></strong></li>
             <li><router-link to="/Contact">Contact</router-link></li>
           </ul>
         </nav>
@@ -36,33 +36,31 @@
     <footer>
       <h3>Copyright © 2021</h3>
       <div class="footer_column">
-        <div>
+        <div id="left_footer">
           <h4>Information</h4>
           <ul>
-            <li>Aide et contact</li>
+            <li><router-link to="./Contact">Aide et contact</router-link></li>
             <li>Mention légales</li>
             <li>Politique de confidentialité</li>
           </ul>
         </div>
-        <div>
+        <div id="middle_footer">
           <h4>Partenaires</h4>
           <ul>
-            <li>IUT Belfort-Montbéliard</li>
-            <li>BUT MMI</li>
+            <li><a href="http://www.iut-bm.univ-fcomte.fr/">IUT Belfort-Montbéliard</a></li>
+            <li><a href="http://mmimontbeliard.com/">BUT MMI</a></li>
           </ul>
         </div>
-        <div>
+        <div id="right_footer">
           <h4>Réseaux</h4>
           <ul>
-            <li>Instagram</li>
-            <li>Twitter</li>
-            <li>Facebook</li>
+            <li><a href=""><img :src="require('@/assets/images/instagram.png')" alt="">Instagram</a></li>
+            <li><a href=""><img :src="require('@/assets/images/twitter.png')" alt="">Twitter</a></li>
+            <li><a href=""><img :src="require('@/assets/images/facebook.png')" alt="">Facebook</a></li>
           </ul>
         </div>
       </div>
-
     </footer>
-
   </div>
 </template>
 

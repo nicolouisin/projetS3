@@ -11,28 +11,24 @@
   </h2>
   <form action="#" method="post" id="contact_form">
     <div class="name">
-      <label for="name"></label>
-      <input type="text" placeholder="My name is" name="name" id="name_input" required>
+      <input type="text" placeholder="Prenom" name="name" id="name_input" required>
     </div>
     <div class="email">
-      <label for="email"></label>
-      <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+      <input type="text" placeholder="Nom" name="name" id="email_input" required>
     </div>
     <div class="telephone">
-      <label for="name"></label>
-      <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+      <input type="email" placeholder="E-mail" name="email" id="email" required>
     </div>
+
     <div class="subject">
-      <label for="subject"></label>
       <select placeholder="Objet" name="subject" id="subject_input" required>
-        <option disabled hidden selected>Subject line</option>
+        <option disabled hidden selected>Objets</option>
         <option>I'd like to start a project</option>
         <option>I'd like to ask a question</option>
         <option>I'd like to make a proposal</option>
       </select>
     </div>
     <div class="message">
-      <label for="message"></label>
       <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
     </div>
     <div class="submit">
