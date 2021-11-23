@@ -102,6 +102,21 @@ nav ul li:hover ul li{
     transition: all 1s ease-out;
 }
 
+@media screen and (max-width: 1050px) {
+  .searchbar {
+  }
+
+  nav {
+    display: none;
+  }
+
+  .logo img {
+    height: 41px;
+    width: 139px;
+  }
+
+}
+
 /*-----------------------------main-----------------------------------*/
 
 .home_image {

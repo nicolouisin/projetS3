@@ -5,6 +5,7 @@ import Contact from '@/components/Contact'
 import Categories from "@/components/Categories";
 import Categorie from "@/components/Categorie";
 import Video from "@/components/Video";
+import PolitiqueDeConfidentialite from "@/components/PolitiqueDeConfidentialite";
 
 Vue.use(Router)
 
@@ -14,7 +15,7 @@ export default new Router({
     {path: '/contact', name: 'Contact', component: Contact},
     {path: '/categories', name: 'Categories', component: Categories},
     {path: '/categorie', name: 'Categorie', component: Categorie},
-    {path: '/video', name: 'Video', component: Video}
-
+    {path: '/video', name: 'Video', component: Video},
+    {path: '/politique-de-confidentialite', name: 'PolitiqueDeConfidentialite', component: PolitiqueDeConfidentialite},
   ]
 })

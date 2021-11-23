@@ -85,9 +85,10 @@ import Carousel from "./Carousel";
 import Contact from "./Contact";
 import Categories from "./Categories";
 
+
 export default {
   name: "accueil",
-  components: { Carousel, Contact, Categories },
+  components: { Carousel, Contact, Categories, PolitiqueDeConfi },
 
 }
 </script>
