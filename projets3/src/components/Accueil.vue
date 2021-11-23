@@ -47,8 +47,7 @@
       </svg>
     </h2>
 
-    <div :style="{ backgroundImage: 'url(' + require('@/assets/images/image_accueil_parallax.png') + ')' }"
-         class="parallax">
+    <div :style="{ backgroundImage: 'url(' + require('@/assets/images/image_accueil_parallax.png') + ')' }" class="parallax">
       <div class="text_parallax">
         <h3>Qui sommes nous ?</h3>
         <p>
