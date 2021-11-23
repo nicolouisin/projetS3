@@ -83,11 +83,12 @@
 import Carousel from "./Carousel";
 import Contact from "./Contact";
 import Categories from "./Categories";
+import Politique from "./Politique";
 
 
 export default {
   name: "accueil",
-  components: { Carousel, Contact, Categories, PolitiqueDeConfi },
+  components: { Carousel, Contact, Categories, Politique },
 
 }
 </script>

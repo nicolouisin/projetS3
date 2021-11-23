@@ -9,35 +9,51 @@
     </h1>
     <div class="category">
       <div class="row">
-        <div class="left">
-          <figure>
-            <img :src="require('../assets/images/categorie_MP.png')" alt="">
-            <figcaption>Techniques de commercialisation</figcaption>
-          </figure>
+        <div id="left">
+          <router-link to="./Categorie">
+            <figure>
+              <img :src="require('../assets/images/categorie_MP.png')" alt="">
+              <figcaption>Techniques de commercialisation</figcaption>
+            </figure>
+          </router-link>
         </div>
-        <div class="right">
-          <figure>
-            <img :src="require('../assets/images/categorie_MP.png')" alt="">
-            <figcaption>MP</figcaption>
-          </figure>
+        <div id="right">
+          <router-link to="">
+            <figure>
+              <img :src="require('../assets/images/categorie_MP.png')" alt="">
+              <figcaption>MP</figcaption>
+            </figure>
+          </router-link>
         </div>
-
-        </div>
+      </div>
     </div>
   </div>
-
 </template>
 
 <script>
+import Categorie from "./Categorie";
+
 export default {
-  name: "Categories"
+  name: "Categories",
+  components: { Categorie },
 }
 </script>
 
 <style scoped>
-.left, .right {
+
+#left, #right {
   flex: 50%;
 }
+
+#right {
+  margin-left: -100px;
+}
+
+#left {
+  margin-right: -100px;
+}
+
+
 .categories {
   margin-top: 200px;
   margin-bottom: 200px;
@@ -46,6 +62,7 @@ export default {
 .categories h1 {
   font-family: 'Days One', sans-serif;
   margin-bottom: 80px;
+  color: #000000;
 }
 
 .row {
@@ -58,6 +75,15 @@ export default {
   .row {
     flex-direction: column;
   }
+
+  #left, #right {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+a {
+  color: #000000;
 }
 
 figure {
@@ -68,7 +94,7 @@ figure {
 
 img {
   max-height: 100vh;
-  max-width: 80%;
+  max-width: 60%;
 }
 
 figcaption {

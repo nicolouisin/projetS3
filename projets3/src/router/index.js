@@ -15,6 +15,5 @@ export default new Router({
     {path: '/categories', name: 'Categories', component: Categories},
     {path: '/categorie', name: 'Categorie', component: Categorie},
     {path: '/video', name: 'Video', component: Video}
-
   ]
 })

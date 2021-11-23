@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "PolitiqueDeConfidentialite"
+  name: "Politique"
 }
 </script>
 

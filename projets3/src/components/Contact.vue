@@ -1,41 +1,59 @@
 <template>
   <div :style="{ backgroundImage: 'url(' + require('@/assets/images/background_contact.png') + ')' }"class="bg_contact">
-  <div id="container">
-  <h2>Contact
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
-      <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
-        <circle cx="7" cy="7" r="7" stroke="none"/>
-        <circle cx="7" cy="7" r="6.25" fill="none"/>
-      </g>
-    </svg>
-  </h2>
-  <form action="#" method="post" id="contact_form">
-    <div class="name">
-      <input type="text" placeholder="Prenom" name="name" id="name_input" required>
-    </div>
-    <div class="email">
-      <input type="text" placeholder="Nom" name="name" id="email_input" required>
-    </div>
-    <div class="telephone">
-      <input type="email" placeholder="E-mail" name="email" id="email" required>
-    </div>
+    <div id="container">
+      <h1>Contact
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+          <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
+            <circle cx="7" cy="7" r="7" stroke="none"/>
+            <circle cx="7" cy="7" r="6.25" fill="none"/>
+          </g>
+        </svg>
+      </h1>
+      <div class="contact_flex">
+        <form action="#" method="post" id="contact_form">
+          <div class="name">
+            <input type="text" placeholder="Prenom" name="name" id="name_input" required>
+          </div>
+          <div class="email">
+            <input type="text" placeholder="Nom" name="name" id="email_input" required>
+          </div>
+          <div class="telephone">
+            <input type="email" placeholder="E-mail" name="email" id="email" required>
+          </div>
 
-    <div class="subject">
-      <select placeholder="Objet" name="subject" id="subject_input" required>
-        <option disabled hidden selected>Objets</option>
-        <option>I'd like to start a project</option>
-        <option>I'd like to ask a question</option>
-        <option>I'd like to make a proposal</option>
-      </select>
+          <div class="subject">
+            <select placeholder="Objet" name="subject" id="subject_input" required>
+              <option disabled hidden selected>Objets</option>
+              <option>I'd like to start a project</option>
+              <option>I'd like to ask a question</option>
+              <option>I'd like to make a proposal</option>
+            </select>
+          </div>
+          <div class="message">
+            <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
+          </div>
+          <div class="submit">
+            <input type="submit" value="Envoyer" id="form_button" />
+          </div>
+        </form>
+        <div class="text_contact">
+          <p>
+            La WebTV a été créée en 2019 par Alain Lamboux-Durand, actuellement chef du département MMI de l’IUT de Belfort-Montbéliard.
+
+            Les personnes qui dirigent la WebTV sont Stéphanie CHATELAIN (Community Manger - Assistante de communication à l’IUT de Belfort-Montbéliard) et Willy YVART (Maître de conférences chez IUT de Belfort-Montbéliard).
+            <br>
+            Lors des cours du jeudi après-midi, qui servent à apprendre les bases de l’audiovisuel, Stéphanie Chatelain s’occupe de la partie rédactionnelle (préparation des interviews, organise le calendrier des évènements à couvrir…).
+            Quant à Willy Yvart, il est chargé de la partie technique (montage des émissions, préparation des équipements pour l’émission…).
+            <br>
+            Contact des responsables de la WebTV de l’IUT de Belfort-Montbéliard :
+            <br>
+            alain.lamboux-durand@univ-fcomte.fr
+            stephanie.chatelain@univ-fcomte.fr
+            willy.yvart@neuf.fr
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="message">
-      <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
-    </div>
-    <div class="submit">
-      <input type="submit" value="Envoyer" id="form_button" />
-    </div>
-  </form>
-  </div>
   </div>
 </template>
 
@@ -53,11 +71,13 @@ export default {
   height: 800px;
   margin-top: -80px;
 }
-#container h2 {
+#container h1 {
   font-family: 'Days One', sans-serif;
   color: #FFFFFF;
-  padding-top: 40px;
+  padding-top: 80px;
+  text-align: left;
 }
+
 button {
   overflow: visible;
 }
@@ -80,12 +100,49 @@ textarea {
   overflow: auto;
 }
 
+.contact_flex {
+  display: flex;
+  flex: 50%;
+  justify-content: space-around;
+  margin-bottom: 900px;
+  color: #FFFFFF;
+}
+
+.text_contact p {
+  max-width: 350px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 1200px){
+  .contact_flex {
+    flex-direction: column;
+    max-width: 600px;
+    justify-content: center;
+  }
+  .text_contact p {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .bg_contact {
+    height: 1400px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #container {
+    width: 400px;
+    margin-bottom: 1200px;
+  }
+  .bg_contact {
+    height: 1400px;
+  }
+}
+
 #container {
-  max-width: 650px;
+  max-width: 1000px;
   margin: 60px auto;
-  position: relative;
   margin-top: 200px;
-  margin-left: 20px;
 }
 
 form {
@@ -202,6 +259,5 @@ textarea {
   background: #85F2DE;
   color: #F2F3EB;
 }
-
 
 </style>
