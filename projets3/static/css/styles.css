@@ -45,11 +45,15 @@ header {
     color: #85F2DE;
 }
 
+.searchbar {
+  position: relative;
+}
+
 .fa-search {
     color: #85F2DE;
     position: absolute;
-    top: 50px;
-    right: 70px;
+    top: 10px;
+    right: 10px;
 }
 
 .logo img {
@@ -102,11 +106,51 @@ nav ul li:hover ul li{
     transition: all 1s ease-out;
 }
 
-@media screen and (max-width: 1050px) {
+.m-nav-toggle {
+  width: 40px;
+  height: 70px;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.m-toggle-icon {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.m-toggle-icon:before {
+  top: 12px;
+  content: "";
+  display: block;
+  width: 50%;
+  text-align: right;
+  height: 3px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.m-toggle-icon:after {
+  top: -14px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+@media only screen and (max-width: 1050px) {
   .searchbar {
+    margin-right: 35%;
   }
 
-  nav {
+  .nav {
     display: none;
   }
 
@@ -115,7 +159,38 @@ nav ul li:hover ul li{
     width: 139px;
   }
 
+  .m-nav-toggle {
+    display: flex;
+    float: right;
+    margin-right: 50px;
+    margin-top: -70px;
+  }
 }
+
+@media only screen and (max-width: 390px) {
+  .logo img {
+    height: 21px;
+    width: 72px;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+  .container_header .searchbar input {
+    border: 2px solid #85F2DE;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100px;
+  }
+
+  .m-nav-toggle {
+    width: 30px;
+    height: 30px;
+    margin-top: -40px;
+  }
+
+}
+
 
 /*-----------------------------main-----------------------------------*/
 

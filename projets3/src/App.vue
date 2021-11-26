@@ -29,6 +29,9 @@
           <input type="text" placeholder="Rechercher...">
         </div>
       </div>
+      <div class="m-nav-toggle">
+        <span class="m-toggle-icon"></span>
+      </div>
     </header>
 
     <router-view/>
@@ -79,4 +82,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
