@@ -13,7 +13,7 @@
       </svg>
     </h2>
 
-    <Carousel></Carousel>
+    <Test></Test>
 
 
     <h2>Emission
@@ -25,7 +25,7 @@
       </svg>
     </h2>
 
-    <Carousel></Carousel>
+    <Test></Test>
 
     <h2>Reportage
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
@@ -36,7 +36,7 @@
       </svg>
     </h2>
 
-    <Carousel></Carousel>
+    <Test></Test>
 
     <h2>JPO
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
@@ -46,6 +46,8 @@
         </g>
       </svg>
     </h2>
+
+    <Test></Test>
 
     <div :style="{ backgroundImage: 'url(' + require('@/assets/images/image_accueil_parallax.png') + ')' }" class="parallax">
       <div class="text_parallax">
@@ -73,22 +75,34 @@
         </svg>
       </h2>
     </div>
-
   </main>
-
-
 </template>
 
 <script>
-import Carousel from "./Carousel";
 import Contact from "./Contact";
 import Categories from "./Categories";
 import Politique from "./Politique";
-
+import param from "@/param/param";
+import Test from "./Test";
 
 export default {
   name: "accueil",
-  components: { Carousel, Contact, Categories, Politique },
+  components: { Contact, Categories, Politique, Test },
+  data ()  {
+    return {
+      video:[]
+    }
+  },
+
+  created() {
+    axios.get(param.host+"video")
+      .then(response=>{
+        console.log("Reponse", response);
+
+        this.video = response.data;
+      })
+      .catch(error => console.log(error))
+  }
 
 }
 </script>

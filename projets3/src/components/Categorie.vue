@@ -9,12 +9,12 @@
     <div class="videos_category">
       <div class="last_videos">
         <h2>Nos dernières vidéos</h2>
-        <div class="tab_videos">
-          <div class="card_videos">
+        <div class="tab_videos" >
+          <div class="card_videos" v-for="video in video" :key="video.id">
             <router-link to="./Video">
               <figure>
-                <img :src="require('../assets/images/miniature_emission_1.png')" alt="">
-                <h3>Fête de la science 2020 - Le Live!</h3>
+                <img :src="video.acf.miniature" alt="">
+                <h3> {{ video.acf.titre }}</h3>
                 <figcaption>C'est dans le bar où elle chante
                   que Maggie Conlan fait la  ...</figcaption>
               </figure>
@@ -40,12 +40,28 @@
 </template>
 
 <script>
-import Carousel from "./Carousel";
 import Video from "./Video";
+import param from "@/param/param";
 
 export default {
   name: "Categorie",
-  components: { Carousel, Video },
+  components: { Video },
+  data ()  {
+    return {
+      video:[]
+    }
+  },
+
+  created() {
+    axios.get(param.host+"video")
+      .then(response=>{
+        console.log("Reponse", response);
+
+        this.video = response.data;
+      })
+      .catch(error => console.log(error))
+  }
+
 }
 </script>
 
@@ -110,6 +126,7 @@ export default {
   flex-wrap: wrap;
   flex-direction: row;
 }
+
 .videos_category h2 {
   font-family: 'Days One', sans-serif;
   text-align: left;
@@ -123,7 +140,8 @@ export default {
 
 .videos_category .last_videos .tab_videos .card_videos figcaption, h3 {
   max-width: 200px;
-  margin-left: 60px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Mukta', sans-serif;
 }
 
@@ -131,9 +149,17 @@ a {
   color: #000000;
 }
 
+.videos_category .last_videos .tab_videos .card_videos {
+  margin-top: 20px;
+  width: 300px;
+}
+
+
+
 .videos_category .last_videos .tab_videos .card_videos img {
-  max-width: 60%;
-  margin-right: 20px;
+  max-width: 50%;
+
+  border-radius: 5px;
 }
 
 .themes {

@@ -2,7 +2,7 @@
   <div class="container">
     <div :style="{ backgroundImage: 'url(' + require('@/assets/images/bg_video.svg') + ')' }"
          class="video_type">
-      <h1>Titre de la video</h1>
+      <h1> Titre vidéo </h1>
       <iframe width="1000" height="500" src="https://www.youtube.com/embed/rmMrGLSVIAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <ul>
         <li>Catégorie</li>
@@ -40,9 +40,26 @@
 
 <script>
 import Carousel from "./Carousel";
+import param from "@/param/param";
+
 export default {
   name: "Video",
-  components: { Carousel }
+  components: { Carousel },
+  data ()  {
+    return {
+      video:[]
+    }
+  },
+
+  created() {
+    axios.get(param.host+"video")
+    .then(response=>{
+        console.log("Reponse", response);
+
+        this.video = response.data;
+    })
+    .catch(error => console.log(error))
+  }
 }
 </script>
 

@@ -14,6 +14,6 @@ export default new Router({
     {path: '/contact', name: 'Contact', component: Contact},
     {path: '/categories', name: 'Categories', component: Categories},
     {path: '/categorie', name: 'Categorie', component: Categorie},
-    {path: '/video', name: 'Video', component: Video}
+    {path: '/video', name: 'Video', component: Video},
   ]
 })
