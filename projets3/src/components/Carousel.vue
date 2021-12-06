@@ -1,66 +1,33 @@
 <template>
-  <div>
-    <VueSlickCarousel class="container" v-bind="settings" ref="carousel">
-      <div class="slider">11</div>
-      <div class="slider">A</div>
-      <div class="slider">A</div>
-      <div class="slider">A</div>
-      <div class="slider">A</div>
-    </VueSlickCarousel>
-  </div>
+  <carousel class="carousel-container" v-bind="settings" >
+    <slide v-for="video in listeVideo" :key="video.id">
+      <div class="slider">
+        <img :src="video.miniature" alt="">
+        <h3>{{video.titre}}</h3>
+        <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      </div>
+    </slide>
+  </carousel>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel';
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+
+import { Carousel, Slide } from 'vue-carousel';
 import param from "@/param/param";
 
 
 export default {
-  name: "Carousel",
-  components: { VueSlickCarousel },
+  name: "MyCarousel",
+  components: { Carousel, Slide},
   data() {
     return {
-      video:[],
+      listeVideo:[],
       settings: {
-        "arrows": true,
-      "dots": true,
-      "infinite": false,
-      "speed": 500,
-      "slidesToShow": 4,
-      "slidesToScroll": 4,
-      "initialSlide": 0,
-      "responsive": [
-        {
-          "breakpoint": 1024,
-          "settings": {
-            "slidesToShow": 3,
-            "slidesToScroll": 3,
-            "dots": true,
-            "arrows": true,
-          }
-        },
-        {
-          "breakpoint": 600,
-          "settings": {
-            "slidesToShow": 2,
-            "slidesToScroll": 2,
-            "initialSlide": 2,
-            "dots": false,
-            "arrows": false
-          }
-        },
-        {
-          "breakpoint": 480,
-          "settings": {
-            "slidesToShow": 1,
-            "slidesToScroll": 1,
-            "dots": false,
-            "arrows": false
-          }
-        }
-      ]
-    },
+        "per-page-custom": [[1199, 4], [600, 3], [320, 2]],
+        "navigation-enabled": true,
+        "mouse-drag":true,
+        "per-page":4,
+      }
     }
   },
   created() {
@@ -68,39 +35,39 @@ export default {
       .then(response=>{
         console.log("Reponse", response);
 
-        this.video = response.data;
+        this.listeVideo = response.data;
       })
       .catch(error => console.log(error))
+  },
+  methods:{
+    byCategory: function(cat){
+      return this.listeVideo.filter(function (video){
+        return video.categorie_video === cat;
+      })
+
+    }
   }
 }
 </script>
 
 <style scoped>
 
-.container .slider {
-  margin-left: -40px;
-}
-
-.container .slider:first-child {
-  margin-left: -40px;
-}
-
-.container {
+.carousel-container {
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 70px;
 }
-
-
 
 .slider img {
-  max-width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 80%;
+  border-radius: 10px;
 }
 
 .slider h3, p {
   margin-left: auto;
   margin-right: auto;
+  max-width: 200px;
 }
 
 </style>

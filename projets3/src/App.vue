@@ -20,8 +20,8 @@
                 <li><a href="">Bibliothèque Universitaire</a></li>
               </ul>
             </li>
-            <li><strong><router-link to="/Categories">Catégories</router-link></strong></li>
-            <li><router-link to="/Contact">Contact</router-link></li>
+            <li><strong><router-link to="/categories">Catégories</router-link></strong></li>
+            <li><router-link to="/contact">Contact</router-link></li>
           </ul>
         </nav>
         <div class="searchbar">
@@ -42,9 +42,9 @@
         <div id="left_footer">
           <h4>Information</h4>
           <ul>
-            <li><router-link to="./Contact">Aide et contact</router-link></li>
-            <li>Mention légales</li>
-            <li>Politique de confidentialité</li>
+            <li><router-link to="/contact">Aide et contact</router-link></li>
+            <li><router-link to="/mentions-legales">Mention légales</router-link></li>
+            <li><router-link to="/politique-de-confidentialite">Politique de confidentialité</router-link></li>
           </ul>
         </div>
         <div id="middle_footer">
@@ -68,19 +68,19 @@
 </template>
 
 <script>
+
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Mukta', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+  text-align: center;
 }
 
 </style>

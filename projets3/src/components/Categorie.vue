@@ -154,8 +154,6 @@ a {
   width: 300px;
 }
 
-
-
 .videos_category .last_videos .tab_videos .card_videos img {
   max-width: 50%;
 

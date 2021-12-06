@@ -1,5 +1,13 @@
 <template>
   <div class="ml-container">
+    <h1>Mentions légales
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+        <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
+          <circle cx="7" cy="7" r="7" stroke="none"/>
+          <circle cx="7" cy="7" r="6.25" fill="none"/>
+        </g>
+      </svg>
+    </h1>
     <p>
       Cette page décrit les mentions légales qui s'appliquent à tout internaute visitant ce site. En le consultant vous vous
       engagez sans réserve à les respecter. Les mentions légales pouvant être modifiées à tout moment et sans préavis,
@@ -73,5 +81,31 @@ export default {
 </script>
 
 <style scoped>
+
+.ml-container {
+  margin-top: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.ml-container h1 {
+  font-family: 'Days One', sans-serif;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.ml-container h2 {
+  font-family: 'Days One', sans-serif;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.ml-container p {
+  max-width: 1000px;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+
 
 </style>

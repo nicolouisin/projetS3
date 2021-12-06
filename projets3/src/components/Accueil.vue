@@ -13,7 +13,7 @@
       </svg>
     </h2>
 
-    <Test></Test>
+    <Carousel></Carousel>
 
 
     <h2>Emission
@@ -25,8 +25,6 @@
       </svg>
     </h2>
 
-    <Test></Test>
-
     <h2>Reportage
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
         <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
@@ -36,8 +34,6 @@
       </svg>
     </h2>
 
-    <Test></Test>
-
     <h2>JPO
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
         <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
@@ -46,8 +42,6 @@
         </g>
       </svg>
     </h2>
-
-    <Test></Test>
 
     <div :style="{ backgroundImage: 'url(' + require('@/assets/images/image_accueil_parallax.png') + ')' }" class="parallax">
       <div class="text_parallax">
@@ -81,16 +75,15 @@
 <script>
 import Contact from "./Contact";
 import Categories from "./Categories";
-import Politique from "./Politique";
+import Carousel from "./Carousel";
 import param from "@/param/param";
-import Test from "./Test";
 
 export default {
   name: "accueil",
-  components: { Contact, Categories, Politique, Test },
+  components: { Contact, Categories, Carousel },
   data ()  {
     return {
-      video:[]
+      listeVideo:[]
     }
   },
 
@@ -99,10 +92,13 @@ export default {
       .then(response=>{
         console.log("Reponse", response);
 
-        this.video = response.data;
+        this.listeVideo = response.data;
       })
       .catch(error => console.log(error))
-  }
+  },
+
+
+
 
 }
 </script>

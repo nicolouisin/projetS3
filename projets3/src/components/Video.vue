@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import Carousel from "./Carousel";
 import param from "@/param/param";
+import Carousel from "@/components/Carousel";
 
 export default {
   name: "Video",
