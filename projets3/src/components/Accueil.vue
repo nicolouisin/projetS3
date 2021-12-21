@@ -12,10 +12,6 @@
         </g>
       </svg>
     </h2>
-
-    <Carousel></Carousel>
-
-
     <h2>Emission
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
         <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
@@ -24,7 +20,7 @@
         </g>
       </svg>
     </h2>
-
+    <Carousel></Carousel>
     <h2>Reportage
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
         <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
@@ -97,12 +93,10 @@ export default {
       .catch(error => console.log(error))
   },
 
-
-
-
 }
 </script>
 
 <style scoped>
+
 
 </style>

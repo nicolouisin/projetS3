@@ -1,20 +1,17 @@
 <template>
   <div class="container">
-    <div :style="{ backgroundImage: 'url(' + require('@/assets/images/bg_video.svg') + ')' }"
-         class="video_type">
-      <h1> Titre vidéo </h1>
-      <iframe width="1000" height="500" src="https://www.youtube.com/embed/rmMrGLSVIAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <ul>
-        <li>Catégorie</li>
-        <li>Thématique</li>
-        <li>Date</li>
-        <li>Durée</li>
-      </ul>
-      <p>
-        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-      </p>
-    </div>
+      <div :style="{ backgroundImage: 'url(' + require('@/assets/images/bg_video.svg') + ')' }"
+           class="video_type">
+        <h1>{{ video.acf.titre }}</h1>
+        <iframe width="1000" height="500" :src="video.acf.url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <ul>
+          <li>Catégorie</li>
+          <li>Thématique</li>
+          <li>{{ video.acf.date }}</li>
+          <li>{{ video.acf.duree }}</li>
+        </ul>
+        <p>{{ video.acf.description }}</p>
+      </div>
     <div class="below_video">
       <div class="like_too">
         <h2>Vous aimerez aussi</h2>
@@ -47,12 +44,12 @@ export default {
   components: { Carousel },
   data ()  {
     return {
-      video:[]
+      video: {},
     }
   },
 
   created() {
-    axios.get(param.host+"video")
+    axios.get(param.host+"video/" + this.$route.params.id)
     .then(response=>{
         console.log("Reponse", response);
 

@@ -9,18 +9,7 @@
     <div class="videos_category">
       <div class="last_videos">
         <h2>Nos dernières vidéos</h2>
-        <div class="tab_videos" >
-          <div class="card_videos" v-for="video in video" :key="video.id">
-            <router-link to="./Video">
-              <figure>
-                <img :src="video.acf.miniature" alt="">
-                <h3> {{ video.acf.titre }}</h3>
-                <figcaption>C'est dans le bar où elle chante
-                  que Maggie Conlan fait la  ...</figcaption>
-              </figure>
-            </router-link>
-          </div>
-        </div>
+        <Carousel></Carousel>
       </div>
       <div class="themes">
         <h2>Thématiques</h2>
@@ -42,10 +31,12 @@
 <script>
 import Video from "./Video";
 import param from "@/param/param";
+import Carousel from "./Carousel";
+
 
 export default {
   name: "Categorie",
-  components: { Video },
+  components: { Video, Carousel },
   data ()  {
     return {
       video:[]
@@ -119,12 +110,6 @@ export default {
 .videos_category {
   margin: 0 auto ;
   width: 1000px;
-}
-
-.tab_videos {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
 }
 
 .videos_category h2 {

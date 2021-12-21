@@ -29,9 +29,31 @@
           <input type="text" placeholder="Rechercher...">
         </div>
       </div>
-      <div class="m-nav-toggle">
-        <span class="m-toggle-icon"></span>
+
+      <div @click="menuOpen" class="m-nav-toggle" >
+        <span :class="['m-toggle-icon', {'m-toggle-icon-open': !this.menu}]"></span>
       </div>
+      <transition name="slide-fade">
+        <div id="mobile-menu" v-if="!menu">
+          <ul>
+            <li>
+              <router-link to="/categories">
+                test
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/categories">
+                test
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/contact">
+                test
+              </router-link>
+            </li>
+          </ul>
+        </div>
+      </transition>
     </header>
 
     <router-view/>
@@ -71,6 +93,17 @@
 
 export default {
   name: 'App',
+  data () {
+    return {
+      menu : true,
+    }
+  },
+  methods: {
+    menuOpen: function() {
+      this.menu = !this.menu
+      this.$emit('toggle', this.menu)
+    }
+  }
 }
 </script>
 
@@ -83,4 +116,28 @@ export default {
   text-align: center;
 }
 
+#mobile-menu {
+  background-color: #151a2a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(1000px);
+  opacity: 0;
+}
 </style>

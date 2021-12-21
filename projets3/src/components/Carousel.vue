@@ -2,9 +2,11 @@
   <carousel class="carousel-container" v-bind="settings" >
     <slide v-for="video in listeVideo" :key="video.id">
       <div class="slider">
-        <img :src="video.miniature" alt="">
-        <h3>{{video.titre}}</h3>
-        <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <router-link :to="'video/' + video.id">
+          <img :src="video.miniature" alt="">
+          <h3>{{video.titre}}</h3>
+          <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        </router-link>
       </div>
     </slide>
   </carousel>
@@ -39,18 +41,19 @@ export default {
       })
       .catch(error => console.log(error))
   },
-  methods:{
-    byCategory: function(cat){
-      return this.listeVideo.filter(function (video){
-        return video.categorie_video === cat;
-      })
-
-    }
-  }
 }
 </script>
 
 <style scoped>
+
+a {
+  color: #000000;
+}
+
+.slider:hover {
+  transform: scale(0.95);
+  transition: 0.25s ease-in;
+}
 
 .carousel-container {
   max-width: 1000px;
