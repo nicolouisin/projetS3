@@ -38,17 +38,17 @@
           <ul>
             <li>
               <router-link to="/categories">
-                test
+                Catégories
               </router-link>
             </li>
             <li>
               <router-link to="/categories">
-                test
+                Thématiques
               </router-link>
             </li>
             <li>
               <router-link to="/contact">
-                test
+                Contact
               </router-link>
             </li>
           </ul>
@@ -140,4 +140,12 @@ export default {
   transform: translateX(1000px);
   opacity: 0;
 }
+
+#mobile-menu ul li a {
+  font-size: 20px;
+  line-height: 120px;
+  font-family: 'Days One', sans-serif;
+  color: #FFFFFF;
+}
+
 </style>

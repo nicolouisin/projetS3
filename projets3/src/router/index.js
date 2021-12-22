@@ -7,7 +7,6 @@ import Categorie from "@/components/Categorie";
 import Video from "@/components/Video";
 import Politique from "@/components/Politique";
 import Mentions from "@/components/Mentions";
-import Contactest from "@/components/Contacttest";
 
 Vue.use(Router)
 
@@ -23,6 +22,5 @@ export default new Router({
     {path: '/video/:id', name: 'Video', component: Video},
     {path: '/politique-de-confidentialite', name: 'Politique', component: Politique},
     {path: '/mentions-legales', name: 'Mentions', component: Mentions},
-    {path: '/contact-test', name: 'Contactest', component: Contactest},
   ]
 })

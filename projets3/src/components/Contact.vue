@@ -10,27 +10,21 @@
         </svg>
       </h1>
       <div class="contact_flex">
-        <form action="#" method="post" id="contact_form">
+        <form action="http://localhost:8888/projetS3/wordpress/wp-json/contact-form-7/v1/contact-forms/265/feedback" method="post" id="contact_form">
           <div class="name">
-            <input type="text" placeholder="Prenom" name="name" id="name_input" required>
+            <input type="text" placeholder="Prenom" name="prenom" id="prenom" required>
           </div>
           <div class="email">
-            <input type="text" placeholder="Nom" name="name" id="email_input" required>
+            <input type="text" placeholder="Nom" name="nom" id="nom" required>
           </div>
           <div class="telephone">
             <input type="email" placeholder="E-mail" name="email" id="email" required>
           </div>
-
           <div class="subject">
-            <select placeholder="Objet" name="subject" id="subject_input" required>
-              <option disabled hidden selected>Objets</option>
-              <option>I'd like to start a project</option>
-              <option>I'd like to ask a question</option>
-              <option>I'd like to make a proposal</option>
-            </select>
+            <input type="text" placeholder="Objet" name="objet" id="objet" required>
           </div>
           <div class="message">
-            <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
+            <textarea name="message" placeholder="message" id="message" cols="30" rows="5" required></textarea>
           </div>
           <div class="submit">
             <input type="submit" value="Envoyer" id="form_button" />
@@ -59,7 +53,32 @@
 
 <script>
 export default {
-  name: "Contact"
+  name: "Contact",
+  created() {
+    const normalizeContactForm7Response = (response) => {
+      // The other possible statuses are different kind of errors
+      const isSuccess = response.status === 'mail_sent';
+      // A message is provided for all statuses
+      const message = response.message;
+      const validationError = isSuccess
+        ? {}
+        : // We transform an array of objects into an object
+        Object.fromEntries(
+          response.invalid_fields.map((error) => {
+            // Extracts the part after "cf7-form-control-wrap"
+            const key = /cf7[-a-z]*.(.*)/.exec(error.into)[1];
+
+            return [key, error.message];
+          })
+        );
+
+      return {
+        isSuccess,
+        message,
+        validationError,
+      };
+    };
+  }
 }
 </script>
 
