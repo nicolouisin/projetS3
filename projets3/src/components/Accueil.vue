@@ -29,7 +29,7 @@
         </g>
       </svg>
     </h2>
-
+    <Carousel></Carousel>
     <h2>JPO
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
         <g id="Ellipse_2" data-name="Ellipse 2" fill="#85f2de" stroke="#000" stroke-width="1.5">
@@ -38,7 +38,7 @@
         </g>
       </svg>
     </h2>
-
+    <Carousel></Carousel>
     <div :style="{ backgroundImage: 'url(' + require('@/assets/images/image_accueil_parallax.png') + ')' }" class="parallax">
       <div class="text_parallax">
         <h3>Qui sommes nous ?</h3>
@@ -64,6 +64,7 @@
           </g>
         </svg>
       </h2>
+      <Caroutheme></Caroutheme>
     </div>
   </main>
 </template>
@@ -73,13 +74,14 @@ import Contact from "./Contact";
 import Categories from "./Categories";
 import Carousel from "./Carousel";
 import param from "@/param/param";
+import Caroutheme from "./Caroutheme";
 
 export default {
   name: "accueil",
-  components: { Contact, Categories, Carousel },
+  components: { Contact, Categories, Carousel, Caroutheme },
   data ()  {
     return {
-      listeVideo:[]
+      listeVideo:[],
     }
   },
 
@@ -92,7 +94,6 @@ export default {
       })
       .catch(error => console.log(error))
   },
-
 }
 </script>
 

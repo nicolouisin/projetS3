@@ -7,6 +7,7 @@ import Categorie from "@/components/Categorie";
 import Video from "@/components/Video";
 import Politique from "@/components/Politique";
 import Mentions from "@/components/Mentions";
+import Search from "@/components/Search";
 
 Vue.use(Router)
 
@@ -18,9 +19,10 @@ export default new Router({
     {path: '/', name: 'Accueil', component: Accueil},
     {path: '/contact', name: 'Contact', component: Contact},
     {path: '/categories', name: 'Categories', component: Categories},
-    {path: '/categorie', name: 'Categorie', component: Categorie},
+    {path: '/categorie/:id', name: 'Categorie', component: Categorie},
     {path: '/video/:id', name: 'Video', component: Video},
     {path: '/politique-de-confidentialite', name: 'Politique', component: Politique},
     {path: '/mentions-legales', name: 'Mentions', component: Mentions},
+    {path: '/recherche', name: 'Search', component: Search},
   ]
 })

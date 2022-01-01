@@ -10,7 +10,7 @@
         </svg>
       </h1>
       <div class="contact_flex">
-        <form action="http://localhost:8888/projetS3/wordpress/wp-json/contact-form-7/v1/contact-forms/265/feedback" method="post" id="contact_form">
+        <form action="https://webtv.nicolaslouisin.fr//wp-json/contact-form-7/v1/contact-forms/265/feedback" method="post" id="contact_form">
           <div class="name">
             <input type="text" placeholder="Prenom" name="prenom" id="prenom" required>
           </div>

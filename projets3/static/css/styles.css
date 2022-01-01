@@ -186,7 +186,7 @@ nav ul li:hover ul li{
   }
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 750px) {
   .logo img {
     height: 21px;
     width: 72px;
@@ -210,6 +210,11 @@ nav ul li:hover ul li{
     z-index: 2;
   }
 
+  .home_image img {
+    display: none;
+  }
+
+
 }
 
 
@@ -227,18 +232,18 @@ main {
     max-width: 80%;
 }
 
-@media only screen and (max-width: 390px) {
-  .home_image img {
-    margin-top: -300px;
-  }
-}
-
 main h2 {
   font-family: 'Days One', sans-serif;
   margin-top: 50px;
   margin-bottom: 25px;
   margin-left: 10%;
   text-align: left;
+}
+
+@media only screen and (max-width: 750px) {
+  main {
+    margin-top: -70px;
+  }
 }
 
 .parallax {
@@ -287,6 +292,10 @@ main h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.videos {
+  margin-bottom: 50px;
 }
 
 

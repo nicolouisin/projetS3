@@ -26,7 +26,7 @@
         </nav>
         <div class="searchbar">
           <i class="fa fa-search"></i>
-          <input type="text" placeholder="Rechercher...">
+          <input v-model="search" @click="navigateToRoute('/recherche')" type="text" placeholder="Rechercher...">
         </div>
       </div>
 
@@ -90,20 +90,30 @@
 </template>
 
 <script>
+import Search from "@/components/Search";
 
 export default {
   name: 'App',
+  components: { Search },
+  props: {
+    search: String,
+  },
+
   data () {
     return {
       menu : true,
     }
   },
   methods: {
+    navigateToRoute(Search) {
+      this.$router.push({ path: Search });
+    },
     menuOpen: function() {
       this.menu = !this.menu
       this.$emit('toggle', this.menu)
     }
-  }
+  },
+
 }
 </script>
 

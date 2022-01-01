@@ -20,14 +20,7 @@
       <div class="themes">
         <h2>Thématiques</h2>
         <div class="themes_miniature">
-          <div>
-            <router-link to="">
-              <figure>
-                <img :src="require('../assets/images/thematique_etudiant.png')" alt="">
-                <figcaption></figcaption>
-              </figure>
-            </router-link>
-          </div>
+              <Caroutheme></Caroutheme>
         </div>
       </div>
 
@@ -38,13 +31,14 @@
 <script>
 import param from "@/param/param";
 import Carousel from "@/components/Carousel";
+import Caroutheme from "@/components/Caroutheme";
 
 export default {
   name: "Video",
-  components: { Carousel },
+  components: { Carousel, Caroutheme },
   data ()  {
     return {
-      video: {},
+      video: [],
     }
   },
 
@@ -56,7 +50,7 @@ export default {
         this.video = response.data;
     })
     .catch(error => console.log(error))
-  }
+  },
 }
 </script>
 
@@ -74,6 +68,7 @@ export default {
 }
 
 .video_type h1 {
+  margin-top: 20px;
   margin-bottom: 50px;
   font-family: 'Days One', sans-serif;
   color: #FFFFFF;

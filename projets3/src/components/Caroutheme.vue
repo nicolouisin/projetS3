@@ -1,12 +1,8 @@
 <template>
   <carousel class="carousel-container" v-bind="settings" >
-    <slide v-for="video in listeVideo" :key="video.id">
+    <slide v-for="theme_video in themeVideo" :key="theme_video.id">
       <div class="slider">
-        <router-link :to="'video/' + video.id">
-          <img :src="video.miniature" alt="">
-          <h3>{{video.titre}}</h3>
-          <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-        </router-link>
+        <img :src="theme_video.acf.image_theme" alt="">
       </div>
     </slide>
   </carousel>
@@ -20,26 +16,25 @@ import param from "@/param/param";
 
 
 export default {
-  name: "MyCarousel",
+  name: "Caroutheme",
   components: { Carousel, Slide},
   data() {
     return {
-      listeVideo:[],
+      themeVideo:[],
       settings: {
         "per-page-custom": [[1199, 4], [900, 4], [600, 3], [320, 2]],
         "navigation-enabled": true,
         "mouse-drag":true,
         "per-page":4,
-        "pagination-enabled":false
       }
     }
   },
   created() {
-    axios.get(param.host+"video")
+    axios.get(param.host+"theme_video")
       .then(response=>{
         console.log("Reponse", response);
 
-        this.listeVideo = response.data;
+        this.themeVideo = response.data;
       })
       .catch(error => console.log(error))
   },
@@ -69,15 +64,5 @@ a {
   border-radius: 5px;
 }
 
-.slider h3, p {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 200px;
-  text-align: left;
-}
-
-.slider {
-  margin-bottom: -50px;
-}
 
 </style>

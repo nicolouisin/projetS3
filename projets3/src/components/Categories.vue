@@ -9,19 +9,11 @@
     </h1>
     <div class="category">
       <div class="row">
-        <div id="left">
-          <router-link to="./Categorie">
+        <div id="column" v-for="categorie_video in listeCategorie" :key="categorie_video.id">
+          <router-link :to="'categorie/' + categorie_video.id">
             <figure>
-              <img :src="require('../assets/images/categorie_MP.png')" alt="">
-              <figcaption>Techniques de commercialisation</figcaption>
-            </figure>
-          </router-link>
-        </div>
-        <div id="right">
-          <router-link to="">
-            <figure>
-              <img :src="require('../assets/images/categorie_MP.png')" alt="">
-              <figcaption>MP</figcaption>
+              <img :src="categorie_video.acf.image_categorie" alt="">
+              <figcaption>{{ categorie_video.acf.libelle_categorie }}</figcaption>
             </figure>
           </router-link>
         </div>
@@ -31,28 +23,28 @@
 </template>
 
 <script>
-import Categorie from "./Categorie";
+import param from "@/param/param";
 
 export default {
   name: "Categories",
-  components: { Categorie },
+  data() {
+    return {
+      listeCategorie:[],
+    }
+  },
+  created() {
+    axios.get(param.host+"categorie_video")
+      .then(response=>{
+        console.log("Reponse", response);
+
+        this.listeCategorie = response.data;
+      })
+      .catch(error => console.log(error))
+  },
 }
 </script>
 
 <style scoped>
-
-#left, #right {
-  flex: 50%;
-}
-
-#right {
-  margin-left: -100px;
-}
-
-#left {
-  margin-right: -100px;
-}
-
 
 .categories {
   margin-top: 200px;
@@ -68,15 +60,12 @@ export default {
 .row {
   display: flex;
   justify-content: center;
-  flex: 50%;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 1200px){
-  .row {
-    flex-direction: column;
-  }
 
-  #left, #right {
+  #column {
     margin-left: 0;
     margin-right: 0;
   }

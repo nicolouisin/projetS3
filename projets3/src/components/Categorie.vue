@@ -3,7 +3,7 @@
     <div class="bg_image_title">
       <div :style="{ backgroundImage: 'url(' + require('@/assets/images/categorie_MP.png') + ')' }"
            class="bg_img">
-        <h1>Titre categorie</h1>
+        <h1>Titre</h1>
       </div>
     </div>
     <div class="videos_category">
@@ -13,47 +13,35 @@
       </div>
       <div class="themes">
         <h2>Thématiques</h2>
-        <div class="themes_miniature">
-          <div>
-            <router-link to="">
-              <figure>
-                <img :src="require('../assets/images/thematique_etudiant.png')" alt="">
-                <figcaption></figcaption>
-              </figure>
-            </router-link>
-          </div>
-        </div>
+        <Caroutheme></Caroutheme>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import Video from "./Video";
 import param from "@/param/param";
 import Carousel from "./Carousel";
-
-
+import Caroutheme from "./Caroutheme";
 export default {
   name: "Categorie",
-  components: { Video, Carousel },
-  data ()  {
+  components: { Video, Carousel, Caroutheme },
+  data () {
     return {
-      video:[]
+      categorie:[],
     }
   },
-
   created() {
-    axios.get(param.host+"video")
+    axios.get(param.host+"categorie_video/" + this.$route.params.id)
       .then(response=>{
         console.log("Reponse", response);
 
-        this.video = response.data;
+        this.categorie = response.data;
       })
       .catch(error => console.log(error))
-  }
-
+  },
 }
+
 </script>
 
 <style scoped>

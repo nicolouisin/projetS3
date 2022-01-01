@@ -1,5 +1,5 @@
 export default {
-  host: 'http://localhost:8888/projetS3/wordpress/wp-json/wp/v2/',
+  host: 'https://webtv.nicolaslouisin.fr/wp-json/wp/v2/',
 
 }
 
