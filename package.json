@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "vue-carousel": "^0.18.0",
-    "vue-element-loading": "^2.0.2",
-    "vue-slick-carousel": "^1.0.6"
-  }
-}
