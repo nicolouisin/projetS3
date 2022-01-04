@@ -5,7 +5,7 @@
         <router-link :to="'video/' + video.id">
           <img :src="video.miniature" alt="">
           <h3>{{video.titre}}</h3>
-          <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p>{{ video.description | liveSubstr(50) }}</p>
         </router-link>
       </div>
     </slide>
@@ -43,6 +43,11 @@ export default {
       })
       .catch(error => console.log(error))
   },
+  filters: {
+    liveSubstr: function (string, nb) {
+      return string.substring(0,nb) + '...';
+    },
+  }
 }
 </script>
 
