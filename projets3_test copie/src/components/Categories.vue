@@ -70,6 +70,13 @@ export default {
     margin-left: 0;
     margin-right: 0;
   }
+  #column a figure img {
+    max-height: 100vh;
+    max-width: 60%;
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+
 }
 
 a {
@@ -85,6 +92,15 @@ figure {
 img {
   max-height: 100vh;
   max-width: 60%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+img:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 figcaption {
