@@ -25,13 +25,14 @@
           </ul>
         </nav>
         <div class="searchbar">
-          <i class="fa fa-search"></i>
-          <input v-model="search" @click="navigateToRoute('/recherche')" type="text" placeholder="Rechercher...">
+          <i v-model="search" @click="navigateToRoute('/recherche')" class="fa fa-search"></i>
         </div>
       </div>
-
-      <div @click="menuOpen" class="m-nav-toggle" >
+      <div class="test">
+        <i v-model="search" @click="navigateToRoute('/recherche')" class="fa fa-search"></i>
+        <div @click="menuOpen" class="m-nav-toggle">
         <span :class="['m-toggle-icon', {'m-toggle-icon-open': !this.menu}]"></span>
+      </div>
       </div>
       <transition name="slide-fade">
         <div id="mobile-menu" v-if="!menu">
@@ -42,7 +43,7 @@
               </router-link>
             </li>
             <li>
-              <router-link to="/categories">
+              <router-link to="/thematiques">
                 Thématiques
               </router-link>
             </li>

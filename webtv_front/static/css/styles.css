@@ -41,19 +41,21 @@ header {
     border-radius: 20px;
 }
 
-.container_header .searchbar input::placeholder, input[type=text] {
-    color: #85F2DE;
-}
-
 .searchbar {
   position: relative;
 }
 
-.fa-search {
+.searchbar .fa-search {
     color: #85F2DE;
     position: absolute;
     top: 10px;
     right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.test .fa-search {
+  color: transparent;
 }
 
 .logo img {
@@ -184,6 +186,20 @@ nav ul li:hover ul li{
     transition: all .4s;
     width: 100%;
   }
+
+  .searchbar .fa-search {
+    display: none;
+  }
+
+  .test .fa-search {
+    color: #85F2DE;
+    position: absolute;
+    right: 120px;
+    top: 43px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
 }
 
 @media only screen and (max-width: 750px) {
@@ -214,6 +230,14 @@ nav ul li:hover ul li{
     display: none;
   }
 
+  .test .fa-search {
+    color: #85F2DE;
+    position: absolute;
+    right: 100px;
+    top: 48px;
+    font-size: 25px;
+    cursor: pointer;
+  }
 
 }
 
